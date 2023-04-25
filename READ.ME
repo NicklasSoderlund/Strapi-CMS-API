@@ -1,0 +1,43 @@
+-----------------------------------------HOW TO USE THIS API-----------------------------------------
+
+1. In 'src' directory, run "npm i" in your console to install all npm packages
+
+2. In the same directory you can then run "npm run dev" to start the API with nodemon or just "npm start"
+
+3. In 'strapi' folder, run "npm run develop" or "npm start" in a seperate console To start the Strapi server
+
+4. BASE URL for all requests will be http://localhost:8008/
+
+5. First you will have to POST to /register with a username and password in the body to register a user like such:
+
+                 {
+                     "username": "Nieve",
+                     "password": "RIP"
+                 }
+
+6. After registering you can POST to /login with the same body to recieve your access token,
+   To make requests to the rest of the API you will need to include this token in your header under the Key "Authorization"
+
+7. You are now able to use the rest of the API   ( /computers, /televisions, /mobiles, /audio ) 
+
+8. Every resource has the option to GET by id, example: http://localhost:8008/computers/2
+
+9. To POST and PUT (update) you must send a body with the correct data, all resources will have a 
+   "name" (string), "description" (string), "manufacturer" (string), and "price" (number) property
+
+Differing attributes: 
+Computer: "processor" (string)
+Television: "screen_size" (number)
+Mobile: "screen_type" (string)
+Audio: "effect" (number)
+
+EXAMPLE:    
+         {
+            "name": "Toshiba x2000",
+            "description": "Great stuff",
+            "manufacturer": "Toshiba",
+            "price": 7600,
+            "processor": "intel i5 superprocessor"
+            }
+
+10. Have fun.
